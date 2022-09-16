@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{ios_base::sync_with_stdio(false);
+cin.tie(NULL);
+int n;
+scanf("%d",&n);
+int a,v[n];
+ll sum=0;
+for(int i=0;i<n;i++)
+{scanf("%d",&a);
+sum+=a;
+v[i]=sum;
+}
+ll ans=0;
+for(int i=0;i<n-1;i++)
+{
+if((sum-v[i])*v[i]>ans)
+ans=(sum-v[i])*v[i];
+}
+printf("%ld",ans);
+}
